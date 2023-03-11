@@ -49,8 +49,8 @@ document.querySelector(".check").addEventListener("click", () => {
         newMessage("No number entered!");
     }
 
-    // input is too high or too low
-    else if (guess < 1 || guess > 20 || (guess - Math.floor(guess))!==0 ) {
+    // input is too high or too low or a decimal number
+    else if ((guess - Math.floor(guess))!==0 || guess < 1 || guess > 20) {
         newMessage("Guess needs to be between 1 and 20 or a whole number! ");
         
     }
