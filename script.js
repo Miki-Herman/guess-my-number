@@ -41,7 +41,6 @@ function newNumber(number){
 function siteEvent(){
     //storing the users guess 
     const guess = Number (document.querySelector(".guess").value);
-    console.log( guess, typeof guess);
 
     // no input scenerio
     if (!guess){
@@ -102,9 +101,9 @@ function siteEvent(){
 };
 
 // enter key event
-document.querySelector("input").addEventListener("keyup",(e) => {
-    if (e.keyCode === 13){
-        console.log(e)
+document.querySelector("input").addEventListener("keypress",(e) => {
+    if (e.key === "Enter"){
+        console.log(e.key)
         siteEvent()
     }
 });
