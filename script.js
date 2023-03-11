@@ -37,9 +37,8 @@ function newNumber(number){
     document.querySelector(".number").textContent = number;
 }
 
-// click event
-document.querySelector(".check").addEventListener("click", () => {
-
+// the site event 
+function siteEvent(){
     //storing the users guess 
     const guess = Number (document.querySelector(".guess").value);
     console.log( guess, typeof guess);
@@ -49,8 +48,8 @@ document.querySelector(".check").addEventListener("click", () => {
         newMessage("No number entered!");
     }
 
-    // input is too high or too low or a decimal number
-    else if ((guess - Math.floor(guess))!==0 || guess < 1 || guess > 20) {
+    // input is too high or too low
+    else if ((guess - Math.floor(guess))!==0 ||guess < 1 || guess > 20 ) {
         newMessage("Guess needs to be between 1 and 20 or a whole number! ");
         
     }
@@ -100,7 +99,17 @@ document.querySelector(".check").addEventListener("click", () => {
 
     };
 
+};
+
+// enter key event
+document.querySelector("input").addEventListener("keyup",(e) => {
+    if (e.keyCode === 13){
+        siteEvent()
+    }
 });
+
+// click event
+document.querySelector(".check").addEventListener("click", () => { siteEvent() });
 
 document.querySelector(".again").addEventListener("click", () => {
     score = 20;
