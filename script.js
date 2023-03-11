@@ -104,6 +104,7 @@ function siteEvent(){
 // enter key event
 document.querySelector("input").addEventListener("keyup",(e) => {
     if (e.keyCode === 13){
+        console.log(e)
         siteEvent()
     }
 });
