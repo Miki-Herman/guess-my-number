@@ -101,7 +101,7 @@ function siteEvent(){
 };
 
 // enter key event
-document.body.addEventListener("keypress",(e) => {
+document.querySelector("body").addEventListener("keypress",(e) => {
     if (e.key === "Enter"){
         console.log(e.key)
         siteEvent()
